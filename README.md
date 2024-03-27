@@ -2,7 +2,7 @@
 
 Welcome to the OnlyBase Ecosystem Repository! This is a centralized hub for projects, tools, tokens, and decentralized applications (dapps) built on Base, a secure, low-cost, builder-friendly Ethereum L2 built to bring the next billion users onchain.  
 
-This repo is a call to acton for all Base Builders so we don't build under a rock or in the dark.  Make a pull request with the info in the following formats or email 11d2@protonmail to submit info by email.  This repo is MIT open source so feel free to build off of this.    
+This repo is a call to acton for all Base Builders so we don't build under a rock or in the dark.  Make a pull request with the info in the following formats or email 11d2@protonmail.com to submit info by email.  You can also reach out on Farcaster/warpcast @0xBuildR.  This repo is MIT open source so feel free to build off of this.    
 
 ## 🚀 About Base
 
