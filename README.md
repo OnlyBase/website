@@ -1,18 +1,12 @@
-# 🌐 Base Ecosystem Repository
+# 🌐 OnlyBase Repository Built by the Community
 
-Welcome to the Base Ecosystem Repository! This is a centralized hub for projects, tools, tokens, and decentralized applications (dapps) built on Base, Coinbase's Layer 2 Blockchain. 
+Welcome to the OnlyBase Ecosystem! This is a centralized hub for projects, tools, tokens, and decentralized applications (dapps) built on Base, a secure, low-cost, builder-friendly Ethereum L2 built to bring the next billion users onchain.  
+
+This repo is a call to acton for all Base Builders so we don't build under a rock or in the dark.  Make a pull request with the info in the following formats.  This repo is MIT open source so feel free to build off of this.    
 
 ## 🚀 About Base
 
 Base is a high-performance Layer 2 blockchain designed to provide fast, secure, and scalable infrastructure for decentralized applications. It leverages cutting-edge technology to enable low-cost transactions and seamless interactions with the Ethereum network.
-
-## 🛠️ Projects
-
-This section is dedicated to showcasing projects built on Base. If you have developed or are aware of any projects utilizing Base, please contribute to this list by adding them below:
-
-- [Project Name](link_to_project) - Description of the project.
-
-*Call to action: Contributors, please add your projects to the list!*
 
 ## 🧰 Tools
 
@@ -37,6 +31,14 @@ Explore decentralized applications powered by Base. From decentralized finance (
 - [Dapp Name](link_to_dapp) - Description of the dapp.
 
 *Call to action: Let's grow this list together - add your favorite Base-powered dapps!*
+
+## 🛠️ Work in Progress Projects
+
+This section is dedicated to showcasing projects built on Base. If you have developed or are aware of any projects utilizing Base, please contribute to this list by adding them below:
+
+- [Project Name](link_to_project) - Description of the project.
+
+*Call to action: Contributors, please add your projects to the list!*
 
 ## 🤝 Contributing
 
