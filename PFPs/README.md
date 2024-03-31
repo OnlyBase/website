@@ -35,10 +35,10 @@ Please add collections in the following format:
 ## Collections
 
 - **Name:** Basestars
-- **Website:** [https://soundcaster.xyz](https://soundcaster.xyz)
+- **Website:** [[https://soundcaster.xyz](https://base.party.app/party/0xcc29da37373580a8b17db4a992c5bcb10ef90903)](https://soundcaster.xyz)
 - **Description:** The future of music is onchain. Get your Basestar to unlock bonus rewards, invited to the studio and navigate the expanding Soundcaster ecosystem.
 - **Creator(s):** @0xBuildR
-- **Launch Date:** Minting 03.26.24
+- **Launch Date:** Phase 1 Minting 03.26.24 Phase 2 starts 04.01.24
 - **Total Items:** 10,000 max
 
   
