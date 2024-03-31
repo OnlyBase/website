@@ -30,11 +30,19 @@ Please add collections in the following format:
 - **Launch Date:** January 1, 2024
 - **Total Items:** 10,000
 
+- Remember, by contributing, you're helping to build a comprehensive directory for the Base NFT community. Let's discover and support amazing PFP collections together!
+
 ## Collections
 
-(TBD - This section will be filled by community contributions.)
+- **Name:** Basestars
+- **Website:** [https://soundcaster.xyz](https://soundcaster.xyz)
+- **Description:** The future of music is onchain. Get your Basestar to unlock bonus rewards, invited to the studio and navigate the expanding Soundcaster ecosystem.
+- **Creator(s):** @0xBuildR
+- **Launch Date:** Minting 03.26.24
+- **Total Items:** 10,000 max
 
-Remember, by contributing, you're helping to build a comprehensive directory for the Base NFT community. Let's discover and support amazing PFP collections together!
+  
+
 
 ## Disclaimer
 
