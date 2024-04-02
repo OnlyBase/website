@@ -29,7 +29,7 @@ ________________________________________________________________________________
 
 # BaseSwap - A Pioneer DEX on Base 🔄
 
-**Website:** [BaseSwap](#https://baseswap.fi)
+**Website:** [BaseSwap](https://baseswap.fi)
 
 **Description:** BaseSwap, as one of the first DEXs launched on the Base blockchain, plays a critical role in the ecosystem. It facilitates liquidity and trading for a wide range of tokens, including memecoins. BaseSwap emphasizes user-friendly interfaces and secure, efficient trading mechanisms, making it a cornerstone for decentralized finance (DeFi) activities on Base.
 
