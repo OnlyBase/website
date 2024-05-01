@@ -13,12 +13,13 @@ import {
 import useLocalStorage from "@/hooks/use-local-storage-state";
 import { UserInfo } from "@/types";
 import { LogOut, Plus } from "lucide-react";
-import Image from "next/image";
+// import Image from "next/image";
 import Link from "next/link";
 import { useState, type FC } from "react";
 import { toast } from "react-toastify";
 import SignIn from "./SignIn";
 import { Button } from "./ui/button";
+import SearchBar from "./SearchBar";
 
 export const Header: FC = () => {
   const { userData } = useApp();
@@ -70,17 +71,26 @@ export const Header: FC = () => {
     <nav className="flex justify-between items-center py-4 md:px-20 px-4">
       <div className="items-center gap-4 md:flex hidden">
         <Link href="/">
-          <Image
+          {/* <Image
             src="/Mintcaster.svg"
             alt="Mintcaster"
             width={150}
             height={25}
             className="cursor-pointer"
-          />
+          /> */}
+          <h1 className="font-bold text-4xl">ONLY BASE</h1>
         </Link>
       </div>
 
+      <div className="flex items-center ">
+       <SearchBar />
+      </div>
+
       <div className={"flex items-center gap-4"}>
+      <Link href="/search"><h1 className="text-white text-xl text-border">Browse</h1></Link>
+      <Link href="/new-project"><h1 className="text-white text-xl text-border">Add project</h1></Link>
+  
+
         {userData?.displayName ? (
           <div className={"flex items-center gap-4"}>
             {userData?.pfp.url && (
@@ -164,7 +174,10 @@ export const Header: FC = () => {
             </Button>
           </div>
         ) : (
+     
           <SignIn />
+       
+      
         )}
       </div>
     </nav>

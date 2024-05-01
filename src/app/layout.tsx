@@ -43,14 +43,14 @@ export default function RootLayout({
       <AppProvider>
         <body
           className={cn(
-            "min-h-screen bg-background font-sans antialiased bg-black text-white",
+            "min-h-screen bg-background font-sans antialiased bg-gray-950 text-white",
             fontSans.variable
           )}
         >
           <ToastContainer />
 
           <Header />
-          <div className={cn("container mx-auto px-4 py-32 w-full h-full")}>
+          <div className={cn("px-4 pt-12 w-full h-full")}>
             {children}
           </div>
         </body>

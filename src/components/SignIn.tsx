@@ -60,7 +60,7 @@ const SignIn: FC = () => {
   const getButton = useCallback(() => {
     return (
       <div
-        className="neynar_signin mt-6"
+        className="neynar_signin"
         data-client_id={client_id}
         data-success-callback="onSignInSuccess"
       />
