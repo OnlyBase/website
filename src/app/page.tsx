@@ -4,17 +4,16 @@ import { FeedType, FilterType } from "@neynar/nodejs-sdk";
 import { Casts } from "@/components/Casts";
 import Spline from '@splinetool/react-spline';
 import { CardContainer } from "@/components/CardContainer";
-// import { useState } from "react";
-import { ProjectContainer } from "@/components/ProjectContainer";
-import { projects, tags } from "../data";
 
-// export const revalidate = 3600;
+import { ProjectContainer } from "@/components/ProjectContainer";
+import { projects, categories } from "../data";
+
+
 
 
 
 export default async function Home() {
-  // const feed = await getFeed();
-  const dataFn = tags;
+
   
 
   const BackgroundSpline = () => (
@@ -22,6 +21,8 @@ export default async function Home() {
       position: 'fixed',
       top: 0,
       left: 0,
+      bottom: 0,
+      right: 0,
       width: '100%',
       height: '100%',
       zIndex: -1, 
@@ -34,7 +35,7 @@ export default async function Home() {
 
   return <div>
         {/* <BackgroundSpline /> */}
-        <CardContainer data={tags} />
+        <CardContainer data={categories} />
         <ProjectContainer data={projects} />
     {/* {feed && <Casts feed={feed.feed.casts} />} */}
     

@@ -8,9 +8,9 @@ interface Props {
 export const PaymentCard: FC<Props> = ({ type }) => {
   const route = type === 'plan' ? 'checkout' : 'guide'
   return (
-    <div className="w-full max-w-sm p-4 bg-gray-900 border border-gray-600 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700 mx-5">
+    <div className="transform transition duration-300 hover:scale-105 w-full max-w-sm p-4 bg-gray-900 border border-gray-800 rounded-lg shadow-lg sm:p-8 dark:bg-gray-800 dark:border-gray-700 mx-5">
       <h5 className="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400">
-        Add your project to ONLY BASE
+        {type ==='plan' ? 'Standart plan' : 'Free plan'}
       </h5>
       <div className="flex items-baseline  text-white">
         {type != "free" && <span className="text-3xl font-semibold">$</span>}
@@ -109,7 +109,7 @@ export const PaymentCard: FC<Props> = ({ type }) => {
       <Link href={route}>
       <button
         type="button"
-        className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center"
+        className="text-white bg-blue-900 hover:bg-gray-950 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center"
       >
         {type === "plan" ? "Go to pay" : "Try out!"}
       </button>

@@ -3,31 +3,40 @@
 import { ProjectProps } from "@/interfaces";
 import { ReactElement, useState } from "react";
 
-
-export default function Project({ image, name, description}: ProjectProps ): ReactElement {
-
-
+export default function Project({
+  image,
+  name,
+  description,
+  tags,
+}: ProjectProps): ReactElement {
   return (
+    <button
+      type="button"
+      className="transform rounded-lg  transition duration-300  hover:translate-y-2 bg-transparent overflow-hidden shadow-lg shadow-gray-800 w-80 m-4 border border-gray-800"
+    >
+      <a className="" href="#">
+        <img alt="Placeholder" className="h-48 w-full" src={image} />
+      </a>
 
-<div className="bg-gray-800 border-gray-600 border rounded-xl shadow-sm mx-5 my-10 sm:flex w-full sm:w-1/2 md:w-5/12 lg:w-5/12 p-2">
-  <div className="flex-shrink-0 relative w-full rounded-t-xl overflow-hidden pt-[40%] sm:rounded-s-xl sm:max-w-60 md:rounded-se-none md:max-w-xs">
-    <img className="size-full absolute top-0 start-0 object-cover" src={image} alt="Image Description"/>
-  </div>
-  <div className="flex flex-wrap">
-    <div className="p-4 flex flex-col h-full sm:p-7">
-      <h3 className="text-lg font-bold text-white">
-        {name}
-      </h3>
-      <p className="mt-1 text-gray-50">
-        {description}
-      </p>
-      <div className="mt-5 sm:mt-auto">
-        <p className="text-xs text-gray-50">
-          Last updated 5 mins ago
-        </p>
+      <div className="rounded-lg z-50 bg-gray-900 hover:bg-black h-full relative -mt-2 p-4">
+        <header className="leading-tight mb-2">
+          <h1 className="text-lg font-bold">
+            <a className="no-underline hover:underline text-gray-50" href="#">
+              {name}
+            </a>
+          </h1>
+        </header>
+
+        <p className="leading-tight pb-2 md:pb-4">{description}</p>
+        <div className="py-4 flex justify-around flex-wrap">
+          {tags &&
+            tags.map((tag) => (
+              <span className="inline-block bg-gray-300 rounded-full px-3 py-1 mb-1 text-sm font-semibold text-gray-700">
+                {tag}
+              </span>
+            ))}
+        </div>
       </div>
-    </div>
-  </div>
-</div>
+    </button>
   );
 }

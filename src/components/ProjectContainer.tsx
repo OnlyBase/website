@@ -17,7 +17,7 @@ export const ProjectContainer: FC<Props> = ({ data }) => {
   return (
       <>
           <h1 className="text-center text-4xl font-extrabold my-20">Projects</h1>
-        <div className="flex flex-wrap justify-center mt-10 w-full">
+            <div className="flex flex-wrap justify-center mt-10 mb-20 w-full">
             {data.map((item) => {
               if (item.name) {
                 return (

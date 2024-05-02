@@ -1,5 +1,11 @@
 "use client";
 
+import {
+  ThirdwebProvider,
+  metamaskWallet,
+  coinbaseWallet,
+  walletConnect,
+} from "@thirdweb-dev/react";
 import useLocalStorage from "@/hooks/use-local-storage-state";
 import { UserInfo } from "@/types";
 import { verifyUser } from "@/utils/helpers";
@@ -96,7 +102,22 @@ export const AppProvider: FC<Props> = ({ children }) => {
     [userData, setUserData, signerUuid, fid]
   );
 
-  return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
+  return (
+    <AppContext.Provider value={value}>
+      <ThirdwebProvider
+      supportedWallets={[
+        metamaskWallet({
+          recommended: true,
+        }),
+        coinbaseWallet(),
+        walletConnect(),
+      ]}
+      clientId="<your_client_id>"
+    >
+        {children}
+      </ThirdwebProvider>
+    </AppContext.Provider>
+  );
 };
 
 export const useApp = (): AppContextInterface => {
