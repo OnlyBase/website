@@ -23,8 +23,10 @@ import {
   useState,
 } from "react";
 import { toast } from "react-toastify";
+import { projects } from "@/data";
+import { ProjectProps } from "@/interfaces";
 
-type SetState<T> = React.Dispatch<React.SetStateAction<T>>;
+export type SetState<T> = React.Dispatch<React.SetStateAction<T>>;
 
 interface Props {
   children: ReactNode;
@@ -37,11 +39,14 @@ interface AppContextInterface {
   setSignerUuid: SetState<string | null>;
   fid: string | null;
   setFid: SetState<string | null>;
+  projectsData: ProjectProps[],
+  setProjectsData: SetState<ProjectProps[]>
 }
 
-const AppContext = createContext<AppContextInterface | null>(null);
+export const AppContext = createContext<AppContextInterface | null>(null);
 
 export const AppProvider: FC<Props> = ({ children }) => {
+  const [projectsData, setProjectsData] = useState<ProjectProps[]>(projects)
   const [signerUuid, setSignerUuid] = useState<string | null>(null);
   const [userData, setUserData] = useState<User | null>(null);
   const [fid, setFid] = useState<string | null>(null);
@@ -98,8 +103,10 @@ export const AppProvider: FC<Props> = ({ children }) => {
       setSignerUuid,
       fid,
       setFid,
+      projectsData,
+      setProjectsData
     }),
-    [userData, setUserData, signerUuid, fid]
+    [userData, setUserData, signerUuid, fid, projectsData, setProjectsData]
   );
 
   return (

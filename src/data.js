@@ -1,72 +1,67 @@
 export const categories = [
   {
     id: "BRIDGE",
-    imageUrl: "url_bridge_image",
     title: "Bridge",
     description: "Interoperability solutions between different blockchains.",
   },
   {
     id: "DAO",
-    imageUrl: "url_dao_image",
     title: "DAO",
     description:
       "Decentralized Autonomous Organizations for governance and decision-making.",
   },
   {
     id: "DEFI",
-    imageUrl: "url_defi_image",
     title: "DeFi",
     description:
       "Decentralized Finance applications for lending, borrowing, and trading.",
   },
   {
     id: "GAMING",
-    imageUrl: "url_gaming_image",
     title: "Gaming",
     description: "Blockchain-based gaming platforms and virtual economies.",
   },
   {
     id: "INFRA",
-    imageUrl: "url_infra_image",
     title: "Infra",
     description: "Infrastructure solutions for blockchain networks.",
   },
   {
     id: "NFT",
-    imageUrl: "url_nft_image",
     title: "NFT",
     description: "Non-Fungible Tokens for digital ownership and collectibles.",
   },
   {
     id: "ONRAMP",
-    imageUrl: "url_onramp_image",
     title: "Onramp",
     description: "Onboarding solutions for fiat-to-crypto conversions.",
   },
   {
     id: "SECURITY",
-    imageUrl: "url_security_image",
     title: "Security",
     description: "Security protocols and solutions for blockchain networks.",
   },
   {
     id: "SOCIAL",
-    imageUrl: "url_social_image",
     title: "Social",
     description:
       "Social media platforms and decentralized communication networks.",
   },
   {
     id: "WALLET",
-    imageUrl: "url_wallet_image",
     title: "Wallet",
     description:
       "Cryptocurrency wallets for storing and managing digital assets.",
   },
   {
     id: "X-CHAIN",
-    imageUrl: "url_xchain_image",
     title: "X-Chain",
+    description:
+      "Cross-chain solutions for interoperability between different blockchain networks.",
+  },
+  {
+    id: "MEMES",
+    title: "Memes",
     description:
       "Cross-chain solutions for interoperability between different blockchain networks.",
   },
@@ -490,5 +485,7 @@ export const projects = [
     tiktok: null,
     Warpcast: null,
     smartContractAddress: "0x71eeba415a523f5c952cc2f06361d5443545ad28",
+    bountyLink: 'xxxxxxx',// new field
+    jobsLink: 'xxxxxxx'// new 
   }
 ];

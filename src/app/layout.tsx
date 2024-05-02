@@ -1,4 +1,5 @@
 import { AppProvider } from "@/Context/AppContext";
+import CustomSpline from "@/components/CustomSpline";
 import { Header } from "@/components/Header";
 import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
@@ -48,9 +49,9 @@ export default function RootLayout({
           )}
         >
           <ToastContainer />
-
           <Header />
-          <div className={cn("px-4 pt-12 w-full h-full")}>
+          <div className={cn("p-4 sm:ml-64 mt-28")}>
+            <CustomSpline />
             {children}
           </div>
         </body>
