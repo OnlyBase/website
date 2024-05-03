@@ -1,6 +1,6 @@
 "use client";
 
-import { useContext, useEffect, useId, useState } from "react";
+import { JSX, useContext, useEffect, useState } from "react";
 
 import Project from "./Project";
 import { AppContext } from "@/Context/AppContext";
@@ -25,13 +25,11 @@ export const ProjectContainer = () => {
     }
   }, [categoryParam]);
 
-  const key = useId();
   return (
     <>
-      <h1 className="text-center text-4xl font-extrabold">Projects</h1>
-      <div className="flex flex-wrap justify-center mt-10 mb-20 w-full">
-        {projectsData.map((item) => (
-          <Project key={key} {...item} />
+      <div className="flex flex-wrap justify-center mb-20 w-full">
+        {projectsData.map((item: JSX.IntrinsicAttributes & ProjectProps) => (
+          <Project key={item.name} {...item} />
         ))}
       </div>
     </>

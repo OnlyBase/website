@@ -1,30 +1,19 @@
 "use client";
 
 import {
-  ThirdwebProvider,
-  metamaskWallet,
-  coinbaseWallet,
-  walletConnect,
-} from "@thirdweb-dev/react";
-import useLocalStorage from "@/hooks/use-local-storage-state";
-import { UserInfo } from "@/types";
-import { verifyUser } from "@/utils/helpers";
-import { User } from "@neynar/nodejs-sdk/build/neynar-api/v1";
-import { ErrorRes } from "@neynar/nodejs-sdk/build/neynar-api/v2";
-import axios, { AxiosError } from "axios";
-import {
   FC,
   ReactNode,
   createContext,
-  useCallback,
   useContext,
-  useEffect,
   useMemo,
   useState,
 } from "react";
-import { toast } from "react-toastify";
+
 import { projects } from "@/data";
 import { ProjectProps } from "@/interfaces";
+import { ChakraProvider } from "@chakra-ui/react";
+import { Web3ReactProvider } from "@web3-react/core";
+import { ethers } from "ethers";
 
 export type SetState<T> = React.Dispatch<React.SetStateAction<T>>;
 
@@ -33,96 +22,34 @@ interface Props {
 }
 
 interface AppContextInterface {
-  userData: User | null;
-  setUserData: SetState<User | null>;
-  signerUuid: string | null;
-  setSignerUuid: SetState<string | null>;
-  fid: string | null;
-  setFid: SetState<string | null>;
-  projectsData: ProjectProps[],
-  setProjectsData: SetState<ProjectProps[]>
+  projectsData: ProjectProps[];
+  setProjectsData: SetState<ProjectProps[]>;
 }
 
 export const AppContext = createContext<AppContextInterface | null>(null);
 
 export const AppProvider: FC<Props> = ({ children }) => {
-  const [projectsData, setProjectsData] = useState<ProjectProps[]>(projects)
-  const [signerUuid, setSignerUuid] = useState<string | null>(null);
-  const [userData, setUserData] = useState<User | null>(null);
-  const [fid, setFid] = useState<string | null>(null);
-  const [user, setUser, removeUser] = useLocalStorage<UserInfo | null>(
-    "user",
-    null
-  );
-
-  const lookupUser = useCallback(async () => {
-    if (user && user.fid) {
-      try {
-        const { data } = await axios.get<{ user: User }>(
-          `/api/user/${user.fid}`
-        );
-        setUserData(data.user);
-        setFid(user.fid);
-      } catch (err) {
-        const axiosError = err as AxiosError<ErrorRes>;
-        toast(axiosError.response?.data.message || "An error occurred", {
-          type: "error",
-          theme: "dark",
-          autoClose: 3000,
-          position: "bottom-right",
-          pauseOnHover: true,
-        });
-      }
-    }
-  }, [user]);
-
-  useEffect(() => {
-    lookupUser();
-  }, [lookupUser]);
-
-  const isUserLoggedIn = useCallback(async () => {
-    if (signerUuid && fid) {
-      const verifiedUser = await verifyUser(signerUuid, fid);
-      if (verifiedUser) {
-        setUser({ signerUuid, fid });
-      } else {
-        removeUser();
-      }
-    }
-  }, [user, signerUuid, fid, setUser, removeUser]);
-
-  useEffect(() => {
-    isUserLoggedIn();
-  }, [isUserLoggedIn]);
+  const [projectsData, setProjectsData] = useState<ProjectProps[]>(projects);
 
   const value: AppContextInterface | null = useMemo(
     () => ({
-      userData,
-      setUserData,
-      signerUuid,
-      setSignerUuid,
-      fid,
-      setFid,
       projectsData,
-      setProjectsData
+      setProjectsData,
     }),
-    [userData, setUserData, signerUuid, fid, projectsData, setProjectsData]
+    [projectsData, setProjectsData]
   );
+
+  const getLibrary = (provider: any) => {
+    const library = new ethers.providers.Web3Provider(provider);
+    library.pollingInterval = 8000; // frequency provider is polling
+    return library;
+  };
 
   return (
     <AppContext.Provider value={value}>
-      <ThirdwebProvider
-      supportedWallets={[
-        metamaskWallet({
-          recommended: true,
-        }),
-        coinbaseWallet(),
-        walletConnect(),
-      ]}
-      clientId="<your_client_id>"
-    >
-        {children}
-      </ThirdwebProvider>
+      <Web3ReactProvider getLibrary={getLibrary}>
+        <ChakraProvider>{children}</ChakraProvider>
+      </Web3ReactProvider>
     </AppContext.Provider>
   );
 };

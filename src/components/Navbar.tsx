@@ -2,6 +2,7 @@
 import SearchBar from "./SearchBar";
 import Link from "next/link";
 import { RowsIcon } from "@radix-ui/react-icons";
+import CoinBaseButton from "./CoinBaseButton";
 
 export default function Navbar({ toggleMenu }: { toggleMenu: () => void }) {
   return (
@@ -35,7 +36,7 @@ export default function Navbar({ toggleMenu }: { toggleMenu: () => void }) {
 
           <div className="flex items-center">
             <div className="flex-row items-center ms-3 hidden md:block">
-              {/* <h6>hi</h6> */}
+              <CoinBaseButton />
             </div>
           </div>
         </div>

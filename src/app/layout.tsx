@@ -8,13 +8,16 @@ import { Inter as FontSans } from "next/font/google";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+
 export const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
 });
 
+
+
 export const metadata: Metadata = {
-  title: "Mintcaster",
+  title: "Only Base",
   description:
     "A Farcaster client that enables you to sign in with Farcaster, see & create casts, and mint any cast as an NFT. Sign in to get started.",
   openGraph: {
