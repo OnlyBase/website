@@ -16,7 +16,7 @@ export default function CustomSpline() {
         zIndex: -1,
       }}
     >
-      <Spline scene="https://prod.spline.design/TIbllRmD5w2Kw7ej/scene.splinecode" />
+    <Spline scene="https://prod.spline.design/3RR-x1MjQUxFLtHA/scene.splinecode" />
     </div>
   );
 
