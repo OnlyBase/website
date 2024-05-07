@@ -21,11 +21,11 @@ export default function CoinBaseButton({
   const [verified, setVerified] = useState();
 
   const refreshState = () => {
-    window.localStorage.setItem("provider", undefined);
+    window.localStorage.setItem("provider", "");
     setNetwork("");
     setMessage("");
     setSignature("");
-    setVerified(undefined);
+    setVerified("");
   };
 
   const disconnect = () => {
