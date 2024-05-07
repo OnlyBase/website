@@ -47,9 +47,11 @@ export const AppProvider: FC<Props> = ({ children }) => {
 
   return (
     <AppContext.Provider value={value}>
-      <Web3ReactProvider getLibrary={getLibrary}>
-        <ChakraProvider>{children}</ChakraProvider>
-      </Web3ReactProvider>
+        <ChakraProvider>
+          <Web3ReactProvider getLibrary={getLibrary}>
+            {children}
+          </Web3ReactProvider>
+        </ChakraProvider>
     </AppContext.Provider>
   );
 };

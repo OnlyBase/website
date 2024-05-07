@@ -10,9 +10,11 @@ import {
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useState } from "react";
+import SearchBar from "./SearchBar";
+import CoinBaseButton from "./CoinBaseButton";
 
 export default function Sidebar({ isOpen }: { isOpen: boolean }) {
-  const [isDropdownOpen, setisDropdownOpen] = useState(true);
+  const [isDropdownOpen, setisDropdownOpen] = useState(false);
   const searchParams = useSearchParams();
   const categoryParam = searchParams.get("category");
 
@@ -48,6 +50,8 @@ export default function Sidebar({ isOpen }: { isOpen: boolean }) {
       }`}
       aria-label="Sidebar"
     >
+      <SearchBar isMobile />
+      <CoinBaseButton isMobile />
       <div className="h-full px-3 pb-4 overflow-y-auto bg-gray-900 dark:bg-gray-800">
         <ul className="space-y-2 font-medium">
           {OPTIONS.map((option) =>

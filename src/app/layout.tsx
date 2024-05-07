@@ -8,13 +8,10 @@ import { Inter as FontSans } from "next/font/google";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-
 export const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
 });
-
-
 
 export const metadata: Metadata = {
   title: "Only Base",
@@ -44,21 +41,21 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <AppProvider>
-        <body
-          className={cn(
-            "min-h-screen bg-background font-sans antialiased bg-gray-950 text-white",
-            fontSans.variable
-          )}
-        >
+      <body
+        className={cn(
+          "min-h-screen bg-background font-sans antialiased bg-gray-950 text-white",
+          fontSans.variable
+        )}
+      >
+        <AppProvider>
           <ToastContainer />
           <Header />
           <div className={cn("p-4 sm:ml-64 mt-28")}>
             <CustomSpline />
             {children}
           </div>
-        </body>
-      </AppProvider>
+        </AppProvider>
+      </body>
     </html>
   );
 }

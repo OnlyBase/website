@@ -1,5 +1,6 @@
 export interface ProjectProps {
-    name: string | null;
+    id: number;
+    name: string;
     description: string | null;
     image: string;
     tags: string[];

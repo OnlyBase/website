@@ -64,11 +64,12 @@ export const categories = [
     title: "X-Chain",
     description:
       "Cross-chain solutions for interoperability between different blockchain networks.",
-  }
+  },
 ];
 
 export const projects = [
   {
+    id: 1,
     name: "0X",
     description:
       "Your one stop shop to build financial products on crypto rails. Enable faster trading, better prices and superior UX in your app.",
@@ -106,6 +107,7 @@ export const projects = [
   },
 
   {
+    id: 2,
     name: "Angle Protocol",
     description:
       "Angle is a decentralized and community governed protocol. Everyone is welcome to take part in the governance of the protocol to collectively start shaping its future.",
@@ -142,6 +144,7 @@ export const projects = [
     // ],
   },
   {
+    id: 3,
     name: "Alien Base",
     description:
       "Alien Base is the Base-native decentralized exchange ecosystem. Use it to trade blue chip assets and derivatives, or check out Area 51 to play with experimental tokens, predictions and lotteries",
@@ -178,6 +181,7 @@ export const projects = [
     // ],
   },
   {
+    id: 4,
     name: "Aave",
     description:
       "Aave Protocol is a non-custodial liquidity protocol. Users can participate as suppliers, borrowers, or liquidators, earning interest on supplied assets and borrowing in an overcollateralized manner.",
@@ -204,6 +208,7 @@ export const projects = [
     smartContractAddress: "0x7fc66500c84a76ad7e9c93437bfc5ac33e2ddae9",
   },
   {
+    id: 5,
     name: "Aerodrome Finance",
     description: "The central trading and liquidity marketplace on Base.",
     image:
@@ -230,6 +235,7 @@ export const projects = [
   },
 
   {
+    id: 6,
     name: "Across Protocol",
     description:
       "Across Protocol is a leading cross-chain token bridge that is secured by UMA's optimistic oracle. It is optimized for capital efficiency with a single liquidity pool, a competitive relayer landscape, and a no-slippage fee model. You can expect secure, fast and affordable cross-chain token transfers with Across.",
@@ -256,6 +262,7 @@ export const projects = [
     smartContractAddress: "0x44108f0223A3C3028F5Fe7AEC7f9bb2E66beF82F",
   },
   {
+    id: 7,
     name: "Bifrost Network Bridge",
     description:
       "Bifrost bridge allows users to bridge their assets across the chains with enhanced security. Unlike the other bridges that use backend solutions, our bridge is validated by Bifrost network nodes.",
@@ -282,6 +289,7 @@ export const projects = [
     smartContractAddress: "0x0c7D5ae016f806603CB1782bEa29AC69471CAb9c",
   },
   {
+    id: 8,
     name: "Brian",
     description:
       "Brian offers a non custodial solution to perform transactions, research web3 info and deploy smart contracts via prompting.",
@@ -308,6 +316,7 @@ export const projects = [
     smartContractAddress: "0x9942663f08491da9e3f22c50504547688e04a06a",
   },
   {
+    id: 9,
     name: "Bungee",
     description:
       "Bungee integrates bridges & DEXs to help you find the best route across 13+ chains.",
@@ -333,6 +342,7 @@ export const projects = [
     smartContractAddress: "0xc1928b5161f3be8ba89b023008abb8ae5a146e59",
   },
   {
+    id: 10,
     name: "Celer Network",
     description:
       "Celer Network is a blockchain interoperability protocol that allows users to seamlessly access a diverse range of tokens, DeFi protocols, GameFi applications, NFT marketplaces, and more across multiple blockchains with just one click.",
@@ -360,6 +370,7 @@ export const projects = [
   },
 
   {
+    id: 11,
     name: "Aragon Project",
     description:
       "Aragon builds secure and flexible tools that enable anyone to launch and manage DAOs. Aragon built the first DAO framework, which secures the governance of over 15B in TVL, and recently launched the no-code Aragon App and modular Aragon OSx protocol.",
@@ -386,6 +397,7 @@ export const projects = [
     smartContractAddress: "0xa117000000f279d81a1d3cc75430faa017fa5a2e",
   },
   {
+    id: 12,
     name: "Llama",
     description:
       "Llama is a fullstack platform for onchain governance and access control. It enables protocols to securely take action using onchain policies and custom execution strategies.",
@@ -411,6 +423,7 @@ export const projects = [
     smartContractAddress: "0x00000000e4327a1b658c56b49cede3ded3309f48",
   },
   {
+    id: 13,
     name: "Prophouse",
     description:
       "Prop House is public infrastructure by Nouns DAO that helps internet communities incentivize ecosystem development.",
@@ -437,9 +450,12 @@ export const projects = [
     smartContractAddress: "0x9ff58067bd8d239000010c154c6983a325df138e",
   },
   {
+    id: 14,
     name: "Vrbs DAO",
-    description: "Vrbs is a global, community-run organization that uses money raised by the community to fund open-source technology, art and public-works projects. ",
-    image: "https://www.base.org/_next/image?url=%2Fimages%2Fpartners%2Fvrbsdao.png&w=640&q=75",
+    description:
+      "Vrbs is a global, community-run organization that uses money raised by the community to fund open-source technology, art and public-works projects. ",
+    image:
+      "https://www.base.org/_next/image?url=%2Fimages%2Fpartners%2Fvrbsdao.png&w=640&q=75",
     tags: ["dao"],
     twitter: "https://twitter.com/vrbsdao",
     website: "https://vrbs.build/",
@@ -459,6 +475,7 @@ export const projects = [
     smartContractAddress: null,
   },
   {
+    id: 15,
     name: "XDAO",
     description:
       "XDAO is a versatile tool that empowers individuals and teams to effortlessly create a DAO.",
@@ -484,12 +501,15 @@ export const projects = [
     Warpcast: null,
     smartContractAddress: "0x71eeba415a523f5c952cc2f06361d5443545ad28",
     bountyLink: null,
-    jobsLink: null, 
+    jobsLink: null,
   },
   {
+    id: 16,
     name: "JesseChrist",
-    description: "$WWJD is inspired by the founder of Base and the role of a CEO spreading the good word of mass adoption onchain",
-    image: "https://partydao.mypinata.cloud/ipfs/bafybeihksw36kypey3f6t5q3scctr434cmnkxsc7n2tikaenj3nbvfrxey",
+    description:
+      "$WWJD is inspired by the founder of Base and the role of a CEO spreading the good word of mass adoption onchain",
+    image:
+      "https://partydao.mypinata.cloud/ipfs/bafybeihksw36kypey3f6t5q3scctr434cmnkxsc7n2tikaenj3nbvfrxey",
     tags: ["memes"],
     twitter: "https://twitter.com/jessechristcoin",
     website: "https://wwjd.meme",
@@ -501,19 +521,23 @@ export const projects = [
     reddit: null,
     youtube: null,
     instagram: null,
-    dextools: "https://basescan.org/address/0x70097ea94b4f982854fb76b13666d41bb09a51c4",
+    dextools:
+      "https://basescan.org/address/0x70097ea94b4f982854fb76b13666d41bb09a51c4",
     dexscreener: "",
     linkedin: null,
     tiktok: null,
     Warpcast: "https://warpcast.com/~/channel/jessechrist",
     smartContractAddress: "0x068cddfb4790d3fc7a3ba57656e047e3848e8e82",
     bountyLink: null,
-    jobsLink: null, 
+    jobsLink: null,
   },
   {
+    id: 17,
     name: "Based Brett",
-    description: "PEPE’S best friend on BASE. Based Brett is one of cryptos most significant cultural icons and the mascot of BASE chain",
-    image: "https://pbs.twimg.com/profile_images/1760832823462608896/zD21_tw__400x400.jpg",
+    description:
+      "PEPE’S best friend on BASE. Based Brett is one of cryptos most significant cultural icons and the mascot of BASE chain",
+    image:
+      "https://pbs.twimg.com/profile_images/1760832823462608896/zD21_tw__400x400.jpg",
     tags: ["memes"],
     twitter: "https://twitter.com/BasedBrett",
     website: "https://www.basedbrett.com/",
@@ -523,21 +547,26 @@ export const projects = [
     medium: null,
     facebook: null,
     reddit: null,
-    youtube: "https://youtube.com/playlist?list=PL-orhHiscCcrOEnaZF4jT9sWOPbFav91W",
+    youtube:
+      "https://youtube.com/playlist?list=PL-orhHiscCcrOEnaZF4jT9sWOPbFav91W",
     instagram: "https://www.instagram.com/basedbrett",
-    dextools: "https://www.dextools.io/app/en/base/pair-explorer/0x404e927b203375779a6abd52a2049ce0adf6609b?t=1708765825026",
+    dextools:
+      "https://www.dextools.io/app/en/base/pair-explorer/0x404e927b203375779a6abd52a2049ce0adf6609b?t=1708765825026",
     dexscreener: "",
     linkedin: null,
     tiktok: null,
     Warpcast: "",
     smartContractAddress: "0x532f27101965dd16442e59d40670faf5ebb142e4",
     bountyLink: null,
-    jobsLink: null, 
+    jobsLink: null,
   },
   {
+    id: 18,
     name: "Toshi",
-    description: "The Face of Base & @Brian_Armstrong's beloved cat named after Satoshi Nakamoto.",
-    image: "https://pbs.twimg.com/profile_images/1720646216164245504/hc-Wkp7y_400x400.jpg",
+    description:
+      "The Face of Base & @Brian_Armstrong's beloved cat named after Satoshi Nakamoto.",
+    image:
+      "https://pbs.twimg.com/profile_images/1720646216164245504/hc-Wkp7y_400x400.jpg",
     tags: ["memes"],
     twitter: "https://twitter.com/toshi_base",
     website: "https://toshithecat.com/",
@@ -555,12 +584,15 @@ export const projects = [
     Warpcast: "https://warpcast.com/toshibase",
     smartContractAddress: null,
     bountyLink: null,
-    jobsLink: null, 
+    jobsLink: null,
   },
   {
+    id: 19,
     name: "Normie",
-    description: "On a mission to onboard the next 1,000,000 $NORMIES TO BASE CHAIN.",
-    image: "https://static.tildacdn.one/tild3166-3461-4631-a161-623965656265/image_6.png",
+    description:
+      "On a mission to onboard the next 1,000,000 $NORMIES TO BASE CHAIN.",
+    image:
+      "https://static.tildacdn.one/tild3166-3461-4631-a161-623965656265/image_6.png",
     tags: ["memes"],
     twitter: "https://twitter.com/NormieBase",
     website: "https://normiebase.com/",
@@ -572,18 +604,22 @@ export const projects = [
     reddit: null,
     youtube: null,
     instagram: null,
-    dextools: "https://www.dextools.io/app/en/base/pair-explorer/0x24605e0bb933f6ec96e6bbbcea0be8cc880f6e6f?t=1710188868010",
+    dextools:
+      "https://www.dextools.io/app/en/base/pair-explorer/0x24605e0bb933f6ec96e6bbbcea0be8cc880f6e6f?t=1710188868010",
     linkedin: null,
     tiktok: null,
     Warpcast: null,
     smartContractAddress: "0x7F12d13B34F5F4f0a9449c16Bcd42f0da47AF200",
     bountyLink: null,
-    jobsLink: null, 
+    jobsLink: null,
   },
   {
+    id: 20,
     name: "Doginme",
-    description: "The $doginme memecoin's roots were established when a Farcaster user inquired if Dan Romero (DWR), the founder of the decentralized social media platform, owned a dog.",
-    image: "https://pbs.twimg.com/profile_images/1768730195249217536/K8XJxa8U_400x400.jpg",
+    description:
+      "The $doginme memecoin's roots were established when a Farcaster user inquired if Dan Romero (DWR), the founder of the decentralized social media platform, owned a dog.",
+    image:
+      "https://pbs.twimg.com/profile_images/1768730195249217536/K8XJxa8U_400x400.jpg",
     tags: ["memes"],
     twitter: "https://x.com/doginmeonbase",
     website: "https://dogin.meme/",
@@ -595,13 +631,14 @@ export const projects = [
     reddit: null,
     youtube: null,
     instagram: null,
-    dexscreener: "https://dexscreener.com/base/0xade9bcd4b968ee26bed102dd43a55f6a8c2416df",
+    dexscreener:
+      "https://dexscreener.com/base/0xade9bcd4b968ee26bed102dd43a55f6a8c2416df",
     dextools: null,
     linkedin: null,
     tiktok: null,
     Warpcast: "https://warpcast.com/doginme",
     smartContractAddress: "0x6921B130D297cc43754afba22e5EAc0FBf8Db75b",
     bountyLink: null,
-    jobsLink: null, 
+    jobsLink: null,
   },
 ];

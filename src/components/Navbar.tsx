@@ -31,14 +31,9 @@ export default function Navbar({ toggleMenu }: { toggleMenu: () => void }) {
                 Only Base
               </span>
             </Link>
-            
           </div>
           <SearchBar />
-          <div className="flex items-center">
-            <div className="flex-row items-center ms-3 hidden md:block">
-              <CoinBaseButton />
-            </div>
-          </div>
+          <CoinBaseButton />
         </div>
       </div>
     </nav>

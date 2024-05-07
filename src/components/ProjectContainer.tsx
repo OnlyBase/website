@@ -29,7 +29,7 @@ export const ProjectContainer = () => {
     <>
       <div className="flex flex-wrap justify-center mb-20 w-full">
         {projectsData.map((item: JSX.IntrinsicAttributes & ProjectProps) => (
-          <Project key={item.name} {...item} />
+          <Project key={item.id} {...item} />
         ))}
       </div>
     </>

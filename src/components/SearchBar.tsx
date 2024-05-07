@@ -4,7 +4,11 @@ import { ProjectProps } from "@/interfaces";
 import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
 import { ChangeEvent, useContext, useState } from "react";
 
-export default function SearchBar() {
+export default function SearchBar({
+  isMobile = false,
+}: {
+  isMobile?: boolean;
+}) {
   const { projectsData, setProjectsData } = useContext(AppContext);
   const [originalProjectsData] = useState<ProjectProps[]>(projectsData);
 
@@ -21,7 +25,11 @@ export default function SearchBar() {
   };
 
   return (
-    <div className="relative hidden md:block -ml-12">
+    <div
+      className={`relative ${
+        isMobile ? "block md:hidden mb-4" : "hidden md:block"
+      } mx-2 `}
+    >
       <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
         <MagnifyingGlassIcon className="w-4 h-4 text-gray-500" />
         <span className="sr-only">Search icon</span>

@@ -56,27 +56,7 @@ export default function SelectWalletModal({
                   height={25}
                   borderRadius="3px"
                 />
-                <Text>Coinbase Wallet</Text>
-              </HStack>
-            </Button>
-            <Button
-              variant="outline"
-              onClick={() => {
-                activate(connectors.injected);
-                setProvider("injected");
-                closeModal();
-              }}
-              w="100%"
-            >
-              <HStack w="100%" justifyContent="center">
-                <Image
-                  src="/mm.png"
-                  alt="Metamask Logo"
-                  width={25}
-                  height={25}
-                  borderRadius="3px"
-                />
-                <Text>Metamask</Text>
+                <Text className="text-black">Coinbase Wallet</Text>
               </HStack>
             </Button>
           </VStack>
