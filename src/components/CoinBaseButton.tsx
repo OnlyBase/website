@@ -25,7 +25,7 @@ export default function CoinBaseButton({
     setNetwork("");
     setMessage("");
     setSignature("");
-    setVerified("");
+    setVerified("undefined");
   };
 
   const disconnect = () => {
