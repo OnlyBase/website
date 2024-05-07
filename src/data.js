@@ -78,11 +78,11 @@ export const projects = [
     tags: ["defi"],
     twitter: "https://twitter.com/0xproject",
     website: "https://0x.org/",
-    discord: null,
+    discord: 'https://discord.com',
     telegram: null,
     github: "https://github.com/0xProject",
-    medium: null,
-    facebook: null,
+    medium: 'https://medium.com',
+    facebook: 'https://facebook.com',
     reddit: "https://www.reddit.com/r/0xProject/",
     youtube: null,
     instagram: null,
@@ -94,6 +94,36 @@ export const projects = [
     tiktok: null,
     Warpcast: "https://warpcast.com/0xproject",
     smartContractAddress: "0x2456490b46C2428cec4989842416d202461a6CFC",
+    faq: [
+      {
+        title:
+          "How can developers enhance their applications using the project protocol?",
+        content:
+          "It offers a secure and transparent foundation based on the Ethereum blockchain. Developers can integrate DEX features into their apps, allowing users to trade tokens directly without relying on centralized exchanges. The open-source nature of 0x allows for customization and faster development cycles. Additionally, composability with other DeFi protocols fosters innovation in creating complex financial applications.",
+      },
+      {
+        title: "What APIs are offered by this project?",
+        content:  "Swap API: Power crypto trading for thousands of tokens with the deepest liquidity.",
+      },
+      {
+        title:
+          "How can this project facilitate token trading with ample liquidity?",
+        content:
+          "0xProject facilitates token trading with ample liquidity by integrating with multiple liquidity sources, utilizing smart order routing, offering exclusive RFQ liquidity, and partnering with professional market makers.",
+      },
+      {
+        title:
+          'What are the benefits of integrating this project Protocol"s Swap API?',
+        content:
+          'Integrating 0xProject"s Swap API offers several benefits. Firstly, it unlocks thousands of tokens on popular blockchains, providing access to a wide range of assets. Additionally, it aggregates liquidity from over 100 automated market makers (AMMs) and private market makers, ensuring competitive pricing.',
+      },
+      {
+        title:
+          "How can developers access comprehensive token metadata using the project Protocol?",
+        content:
+          "Developers can access comprehensive token metadata using the Token Registry API provided by 0x Protocol. This API allows developers to enrich their trading applications with curated and detailed information about tokens.",
+      },
+    ],
     // "smartContractAudits": [
     //     {
     //         "name": "Audit 1",

@@ -1,16 +1,51 @@
 "use client";
+import ProjectDetailHeader from "@/components/ProjectDetailHeader";
+import ProjectFAQ from "@/components/ProjectFAQ";
+import ProjectOverview from "@/components/ProjectOverview";
+import RelatedProjects from "@/components/RelatedProjects";
+import { ProjectDetailContainer } from "@/containers/ProjectDetailContainer";
 import { projects } from "@/data";
-import { useParams } from "next/navigation";
-import slugify from "slugify";
+import { ProjectProps } from "@/interfaces";
+
+import { useParams, notFound } from "next/navigation";
+import { useEffect } from "react";
 
 export default function ProjectDetail() {
   const { id } = useParams();
-  const project = projects.find((project) => project.id === Number(id));
 
-  console.log(id, project);
+  const project: ProjectProps = projects.find(
+    (project) => project.id === Number(id)
+  );
+
+  useEffect(() => {
+    if (!project) {
+      notFound();
+    }
+  }, []);
+
+  const relatedProjects = project
+    ? projects
+        .filter(
+          (p) =>
+            p.id !== project.id &&
+            p.tags.some((tag) => project.tags.includes(tag))
+        )
+        .slice(0, 3)
+    : [];
+  // console.log(id, project, relatedProjects, faqVisibility);
   return (
-    <div className="flex flex-wrap justify-center mb-20 w-full h-screen bg-gray-900 rounded-lg">
-      <h1>hi</h1>
-    </div>
+    <ProjectDetailContainer>
+      {project && (
+        <>
+          <ProjectDetailHeader project={project} />
+          <ProjectOverview
+            title={project.name}
+            description={project.description}
+          />
+          <RelatedProjects relatedProjects={relatedProjects} />
+          <ProjectFAQ project={project} />
+        </>
+      )}
+    </ProjectDetailContainer>
   );
 }

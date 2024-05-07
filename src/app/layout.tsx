@@ -50,7 +50,7 @@ export default function RootLayout({
         <AppProvider>
           <ToastContainer />
           <Header />
-          <div className={cn("p-4 sm:ml-64 mt-28")}>
+          <div className={cn("p-4 sm:ml-64 mt-16")}>
             <CustomSpline />
             {children}
           </div>

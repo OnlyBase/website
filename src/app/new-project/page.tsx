@@ -6,7 +6,7 @@ export default function NewProject() {
   return (
     <Widget
       id="m1SSyCyo"
-      style={{ width: "100%", height: "80vh" }}
+      style={{ width: "100%", height: "80vh", marginTop: 14 }}
       className="-mt-10"
     />
     // <div className="flex flex-wrap items-center justify-center shadow-lg rounded-lg py-10">
