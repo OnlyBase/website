@@ -93,7 +93,7 @@ export const projects = [
     linkedin: null,
     tiktok: null,
     Warpcast: "https://warpcast.com/0xproject",
-    smartContractAddress: "0x2456490b46C2428cec4989842416d202461a6CFC",
+    smartContractAddress: "0xe41d2489571d322189246dafa5ebde1f4699f498",
     faq: [
       {
         title:

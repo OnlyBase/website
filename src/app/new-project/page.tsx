@@ -9,8 +9,6 @@ export default function NewProject() {
       style={{ width: "100%", height: "80vh", marginTop: 14 }}
       className="-mt-10"
     />
-    // <div className="flex flex-wrap items-center justify-center shadow-lg rounded-lg py-10">
-    //   <h3 className="mb-5 text-lg font-medium text-white">
     //     Choose your option:
     //   </h3>
     //   <ul className="grid w-full gap-6 md:grid-cols-2">

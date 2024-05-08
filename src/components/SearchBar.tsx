@@ -9,7 +9,11 @@ export default function SearchBar({
 }: {
   isMobile?: boolean;
 }) {
-  const { projectsData, setProjectsData } = useContext(AppContext);
+  const context = useContext(AppContext);
+  if (!context) {
+    return false;
+  }
+  const { projectsData, setProjectsData } = context;
   const [originalProjectsData] = useState<ProjectProps[]>(projectsData);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {

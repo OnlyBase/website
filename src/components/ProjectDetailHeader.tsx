@@ -119,6 +119,14 @@ export default function ProjectDetailHeader({
               FAQs
             </a>
           </li>
+          <li className="me-2">
+            <a
+              href="#tokenoverview"
+              className="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 text-white hover:border-gray-300"
+            >
+              Token Overview
+            </a>
+          </li>
         </ul>
       </div>
     </>
