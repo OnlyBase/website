@@ -9,7 +9,7 @@ import {
 } from "@radix-ui/react-icons";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { Suspense, useState } from "react";
+import { useState } from "react";
 import SearchBar from "./SearchBar";
 import CoinBaseButton from "./CoinBaseButton";
 
@@ -43,7 +43,6 @@ export default function Sidebar({ isOpen }: { isOpen: boolean }) {
   ];
 
   return (
-    <Suspense>
       <aside
         id="logo-sidebar"
         className={`fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-gray-900 border-r border-gray-800 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700 ${
@@ -106,6 +105,5 @@ export default function Sidebar({ isOpen }: { isOpen: boolean }) {
           </ul>
         </div>
       </aside>
-    </Suspense>
   );
 }

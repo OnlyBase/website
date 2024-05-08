@@ -1,7 +1,12 @@
 "use client";
 
 import { ProjectContainer } from "@/components/ProjectContainer";
+import { Suspense } from "react";
 
 export default function Home() {
-  return <ProjectContainer />;
+  return (
+    <Suspense>
+      <ProjectContainer />
+    </Suspense>
+  );
 }

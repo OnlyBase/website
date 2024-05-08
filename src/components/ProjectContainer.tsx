@@ -1,6 +1,4 @@
-"use client";
-
-import { JSX, Suspense, useContext, useEffect, useState } from "react";
+import { JSX, useContext, useEffect, useState } from "react";
 
 import Project from "./Project";
 import { AppContext } from "@/Context/AppContext";
@@ -30,12 +28,10 @@ export const ProjectContainer = () => {
   }, [categoryParam]);
 
   return (
-    <Suspense>
-      <div className="flex flex-wrap justify-center mb-20 w-full">
-        {projectsData.map((item: JSX.IntrinsicAttributes & ProjectProps) => (
-          <Project key={item.id} {...item} />
-        ))}
-      </div>
-    </Suspense>
+    <div className="flex flex-wrap justify-center mb-20 w-full">
+      {projectsData.map((item: JSX.IntrinsicAttributes & ProjectProps) => (
+        <Project key={item.id} {...item} />
+      ))}
+    </div>
   );
 };
