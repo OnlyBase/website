@@ -2,11 +2,13 @@ import { ProjectProps } from "@/interfaces";
 import { useRouter } from "next/navigation";
 import { BsMeta, BsMedium } from "react-icons/bs";
 import {
+  ArrowLeftIcon,
   DiscordLogoIcon,
   ExternalLinkIcon,
   GitHubLogoIcon,
   TwitterLogoIcon,
 } from "@radix-ui/react-icons";
+import Link from "next/link";
 
 interface ProjectDetailHeaderProps {
   project: ProjectProps;
@@ -16,8 +18,15 @@ export default function ProjectDetailHeader({
   project,
 }: ProjectDetailHeaderProps) {
   const router = useRouter();
+
+  const handleGoBack = () => router.back();
+
   return (
     <>
+      <ArrowLeftIcon
+        className="h-4 w-4 rounded-3xl shadow-lg shadow-gray-600 mb-6 cursor-pointer text-gray-300"
+        onClick={handleGoBack}
+      />
       <div className="flex flex-row items-center">
         <img
           alt={project.name}
@@ -27,11 +36,16 @@ export default function ProjectDetailHeader({
           className="rounded-lg"
         />
         <div className="pl-4 flex flex-col">
-          <p className="text-3xl">{project?.name}</p>
+          <p className="text-3xl mb-2">{project?.name}</p>
           {project?.tags.map((tag) => (
-            <p key={tag} className="text-lg pt-2">
-              {tag}
-            </p>
+            <Link href={`/?category=${tag.toLowerCase()}`}>
+              <span
+                key={tag}
+                className={`rounded-full px-3 py-1 mb-1 text-sm font-semibold tag-${tag.toLowerCase()}`}
+              >
+                {tag}
+              </span>
+            </Link>
           ))}
         </div>
       </div>

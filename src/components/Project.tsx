@@ -3,9 +3,7 @@
 import { ProjectProps } from "@/interfaces";
 // import { StarIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
-import { ReactElement } from "react";
- 
-
+import { ReactElement, useEffect } from "react";
 
 export default function Project({
   id,
@@ -14,7 +12,6 @@ export default function Project({
   description,
   tags,
 }: ProjectProps): ReactElement {
-
   return (
     <Link
       href={`project/${id}`}
@@ -38,7 +35,7 @@ export default function Project({
             tags.map((tag) => (
               <span
                 key={tag}
-                className="inline-block bg-gray-300 rounded-full px-3 py-1 mb-1 text-sm font-semibold text-gray-700"
+                className={`inline-block tag-${tag.toLowerCase()} rounded-full px-3 py-1 mb-1 text-sm font-semibold`}
               >
                 {tag}
               </span>
