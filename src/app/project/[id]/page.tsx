@@ -2,11 +2,10 @@
 import ProjectDetailHeader from "@/components/ProjectDetailHeader";
 import ProjectFAQ from "@/components/ProjectFAQ";
 import ProjectOverview from "@/components/ProjectOverview";
-import ProjectTokenOverview from "@/components/ProjectTokenOverview";
+// import ProjectTokenOverview from "@/components/ProjectTokenOverview";
 import RelatedProjects from "@/components/RelatedProjects";
 import { ProjectDetailContainer } from "@/containers/ProjectDetailContainer";
 import { projects } from "@/data";
-import { ProjectProps } from "@/interfaces";
 
 import { useParams, notFound } from "next/navigation";
 import { useEffect } from "react";
@@ -14,7 +13,7 @@ import { useEffect } from "react";
 export default function ProjectDetail() {
   const { id } = useParams();
 
-  const project: ProjectProps = projects.find(
+  const project = projects.find(
     (project) => project.id === Number(id)
   );
 
@@ -33,7 +32,6 @@ export default function ProjectDetail() {
         )
         .slice(0, 3)
     : [];
-  // console.log(id, project, relatedProjects, faqVisibility);
   return (
     <ProjectDetailContainer>
       {project && (
