@@ -3,79 +3,67 @@ export const categories = [
     id: "BRIDGE",
     title: "Bridge",
     description: "Interoperability solutions between different blockchains.",
-    style: "tag-blue",
   },
   {
     id: "DAO",
     title: "DAO",
     description:
       "Decentralized Autonomous Organizations for governance and decision-making.",
-    style: "tag-blue",
   },
   {
     id: "DEFI",
     title: "DeFi",
     description:
       "Decentralized Finance applications for lending, borrowing, and trading.",
-    style: "tag-blue",
   },
   {
     id: "GAMING",
     title: "Gaming",
     description: "Blockchain-based gaming platforms and virtual economies.",
-    style: "tag-blue",
   },
   {
     id: "INFRA",
     title: "Infra",
     description: "Infrastructure solutions for blockchain networks.",
-    style: "tag-blue",
   },
   {
     id: "MEMES",
     title: "Memes",
     description:
       "Cross-chain solutions for interoperability between different blockchain networks.",
-    style: "tag-blue",
   },
   {
     id: "NFT",
     title: "NFT",
     description: "Non-Fungible Tokens for digital ownership and collectibles.",
-    style: "tag-blue",
   },
   {
     id: "ONRAMP",
     title: "Onramp",
     description: "Onboarding solutions for fiat-to-crypto conversions.",
-    style: "tag-blue",
   },
   {
     id: "SECURITY",
     title: "Security",
     description: "Security protocols and solutions for blockchain networks.",
-    style: "tag-blue",
   },
   {
     id: "SOCIAL",
     title: "Social",
     description:
       "Social media platforms and decentralized communication networks.",
-    style: "tag-blue",
   },
   {
     id: "WALLET",
     title: "Wallet",
     description:
       "Cryptocurrency wallets for storing and managing digital assets.",
-    style: "tag-blue",
   },
   {
     id: "X-CHAIN",
     title: "X-Chain",
     description:
       "Cross-chain solutions for interoperability between different blockchain networks.",
-    style: "tag-blue",
   },
 ];
 

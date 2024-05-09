@@ -1,7 +1,7 @@
 "use client";
 import { AppContext } from "@/Context/AppContext";
 import { ProjectProps } from "@/interfaces";
-import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
+import { FaMagnifyingGlass } from "react-icons/fa6";
 import { ChangeEvent, useContext, useState } from "react";
 
 export default function SearchBar({
@@ -35,7 +35,7 @@ export default function SearchBar({
       } mx-2 `}
     >
       <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-        <MagnifyingGlassIcon className="w-4 h-4 text-gray-500" />
+        <FaMagnifyingGlass className="w-3 h-3 text-gray-500" />
         <span className="sr-only">Search icon</span>
       </div>
       <input

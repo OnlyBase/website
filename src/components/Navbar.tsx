@@ -1,7 +1,7 @@
 "use client";
 import SearchBar from "./SearchBar";
 import Link from "next/link";
-import { RowsIcon } from "@radix-ui/react-icons";
+import { FaAlignJustify } from "react-icons/fa";
 import CoinBaseButton from "./CoinBaseButton";
 
 export default function Navbar({ toggleMenu }: { toggleMenu: () => void }) {
@@ -19,7 +19,7 @@ export default function Navbar({ toggleMenu }: { toggleMenu: () => void }) {
               className="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
             >
               <span className="sr-only">Open sidebar</span>
-              <RowsIcon className="w-4 h-4" />
+              <FaAlignJustify  className="w-4 h-4" />
             </button>
             <Link href="/" className="flex ms-2 md:me-24">
               <img

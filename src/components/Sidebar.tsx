@@ -1,12 +1,9 @@
 "use client";
 
 import { categories } from "@/data";
-import {
-  HomeIcon,
-  ListBulletIcon,
-  PlusIcon,
-  ChevronDownIcon,
-} from "@radix-ui/react-icons";
+
+import { FaChevronDown, FaRegSquarePlus, FaListUl, FaHouse  } from "react-icons/fa6";
+
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useState } from "react";
@@ -24,19 +21,19 @@ export default function Sidebar({ isOpen }: { isOpen: boolean }) {
     {
       id: 1,
       name: "Home",
-      icon: HomeIcon,
+      icon: FaHouse,
       route: "/",
     },
     {
       id: 2,
       name: "Add project",
-      icon: PlusIcon,
+      icon: FaRegSquarePlus,
       route: "/new-project",
     },
     {
       id: 3,
       name: "Categories",
-      icon: ListBulletIcon,
+      icon: FaListUl,
       options: categories,
       route: null,
     },
@@ -68,7 +65,7 @@ export default function Sidebar({ isOpen }: { isOpen: boolean }) {
                     <span className="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">
                       {option.name}
                     </span>
-                    <ChevronDownIcon className="w-3 h-3" />
+                    <FaChevronDown className="w-3 h-3" />
                   </button>
                   <ul
                     id="dropdown-example"

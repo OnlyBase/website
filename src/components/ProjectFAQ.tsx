@@ -1,5 +1,5 @@
 import { ProjectProps } from "@/interfaces";
-import { ChevronDownIcon } from "@radix-ui/react-icons";
+import { FaChevronDown } from "react-icons/fa6";
 import { useState } from "react";
 
 export default function ProjectFAQ({ project }: { project: ProjectProps }) {
@@ -40,7 +40,7 @@ export default function ProjectFAQ({ project }: { project: ProjectProps }) {
                     onClick={() => toggleFaq(index)}
                   >
                     <span className="text-base">{faq.title}</span>
-                    <ChevronDownIcon
+                    <FaChevronDown
                       className={`w-10 ${
                         activeIndex === index ? "transform rotate-180" : ""
                       }`}

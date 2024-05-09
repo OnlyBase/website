@@ -2,7 +2,7 @@
 import ProjectDetailHeader from "@/components/ProjectDetailHeader";
 import ProjectFAQ from "@/components/ProjectFAQ";
 import ProjectOverview from "@/components/ProjectOverview";
-// import ProjectTokenOverview from "@/components/ProjectTokenOverview";
+import ProjectTokenOverview from "@/components/ProjectTokenOverview";
 import RelatedProjects from "@/components/RelatedProjects";
 import { ProjectDetailContainer } from "@/containers/ProjectDetailContainer";
 import { projects } from "@/data";
@@ -43,7 +43,7 @@ export default function ProjectDetail() {
           />
           <RelatedProjects relatedProjects={relatedProjects} />
           <ProjectFAQ project={project} />
-          {/* <ProjectTokenOverview project={project} /> */}
+          <ProjectTokenOverview project={project} />
         </>
       )}
     </ProjectDetailContainer>

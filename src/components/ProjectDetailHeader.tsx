@@ -1,13 +1,6 @@
 import { ProjectProps } from "@/interfaces";
 import { useRouter } from "next/navigation";
-import { BsMeta, BsMedium } from "react-icons/bs";
-import {
-  ArrowLeftIcon,
-  DiscordLogoIcon,
-  ExternalLinkIcon,
-  GitHubLogoIcon,
-  TwitterLogoIcon,
-} from "@radix-ui/react-icons";
+import { FaMedium, FaSquareXTwitter, FaFacebook, FaDiscord, FaGithub, FaArrowUpRightFromSquare, FaArrowLeft   } from "react-icons/fa6";
 import Link from "next/link";
 
 interface ProjectDetailHeaderProps {
@@ -23,7 +16,7 @@ export default function ProjectDetailHeader({
 
   return (
     <>
-      <ArrowLeftIcon
+      <FaArrowLeft
         className="h-4 w-4 rounded-3xl shadow-lg shadow-gray-600 mb-6 cursor-pointer text-gray-300"
         onClick={handleGoBack}
       />
@@ -38,7 +31,7 @@ export default function ProjectDetailHeader({
         <div className="pl-4 flex flex-col">
           <p className="text-3xl mb-2">{project?.name}</p>
           {project?.tags.map((tag) => (
-            <Link href={`/?category=${tag.toLowerCase()}`}>
+            <Link href={`/?category=${tag.toLowerCase()}`} key={tag}>
               <span
                 key={tag}
                 className={`rounded-full px-3 py-1 mb-1 text-sm font-semibold tag-${tag.toLowerCase()}`}
@@ -55,7 +48,7 @@ export default function ProjectDetailHeader({
           onClick={() => router.push(`${project.github}`)}
           className="text-white bg-[#24292F] hover:bg-[#24292F]/90 focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-500 dark:hover:bg-[#050708]/30 me-2 mb-2"
         >
-          <GitHubLogoIcon className="h-4 w-4" />
+          <FaGithub className="h-4 w-4" />
         </button>
 
         {project.medium && (
@@ -64,7 +57,7 @@ export default function ProjectDetailHeader({
             onClick={() => router.push(`${project.medium}`)}
             className="text-white bg-[#24292F] hover:bg-[#24292F]/90 focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-500 dark:hover:bg-[#050708]/30 me-2 mb-2"
           >
-            <BsMedium className="h-4 w-4" />
+            <FaMedium className="h-4 w-4" />
           </button>
         )}
 
@@ -73,7 +66,7 @@ export default function ProjectDetailHeader({
           onClick={() => router.push(`${project.twitter}`)}
           className="text-white bg-[#1da1f2] hover:bg-[#1da1f2]/90 focus:ring-4 focus:outline-none focus:ring-[#1da1f2]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#1da1f2]/55 me-2 mb-2"
         >
-          <TwitterLogoIcon className="h-4 w-4" />
+          <FaSquareXTwitter className="h-4 w-4" />
         </button>
 
         {project.facebook && (
@@ -82,7 +75,7 @@ export default function ProjectDetailHeader({
             onClick={() => router.push(`${project.facebook}`)}
             className="text-white bg-[#3b5998] hover:bg-[#3b5998]/90 focus:ring-4 focus:outline-none focus:ring-[#3b5998]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#3b5998]/55 me-2 mb-2"
           >
-            <BsMeta className="h-4 w-4" />
+            <FaFacebook className="h-4 w-4" />
           </button>
         )}
 
@@ -92,7 +85,7 @@ export default function ProjectDetailHeader({
             onClick={() => router.push(`${project.discord}`)}
             className="text-white bg-[#4285F4] hover:bg-[#4285F4]/90 focus:ring-4 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 me-2 mb-2"
           >
-            <DiscordLogoIcon className="h-4 w-4" />
+            <FaDiscord className="h-4 w-4" />
           </button>
         )}
 
@@ -102,7 +95,7 @@ export default function ProjectDetailHeader({
           className="text-white flex items-center bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 "
         >
           Website
-          <ExternalLinkIcon className="h-4 w-4 ml-2" />
+          <FaArrowUpRightFromSquare className="h-3 w-3 ml-2" />
         </button>
       </div>
 
