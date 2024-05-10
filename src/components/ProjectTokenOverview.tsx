@@ -8,7 +8,8 @@ import { Chart as ChartJS, CategoryScale } from "chart.js/auto";
 import { Line } from "react-chartjs-2";
 
 import React, { useEffect, useState } from "react";
-import { FaChevronDown, FaArrowUp } from "react-icons/fa6";
+import { FaChevronDown, FaArrowUp, FaArrowDown } from "react-icons/fa6";
+import { formatMarketCapValue } from "@/utils/helpers";
 
 ChartJS.register(CategoryScale);
 
@@ -26,8 +27,8 @@ const DROPDOWN_OPTIONS = [
     value: 30,
   },
   {
-    title: "Last 90 days",
-    value: 90,
+    title: "Last 60 days",
+    value: 60,
   },
   {
     title: "Last year",
@@ -41,6 +42,10 @@ export default function ProjectTokenOverview({
   project: ProjectProps;
 }) {
   const [tokenPriceData, setTokenPriceData] = useState<any>(null);
+  const [priceChangePercentage, setPriceChangePercentage] = useState<
+    number | undefined
+  >();
+  const [tokenLiquidity, setTokenLiquidity] = useState("");
   const [selectedDropdown, setSelectedDropdown] = useState(DROPDOWN_OPTIONS[0]);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [filter, setFilter] = useState({
@@ -64,7 +69,15 @@ export default function ProjectTokenOverview({
       );
       const tokenDataResponse: TokenDataCoinGecko =
         await responseTokenData.json();
+      const {
+        market_data: { total_volume, market_cap, price_change_percentage_24h },
+      } = tokenDataResponse;
+      const liquidityCalc = ((total_volume.usd / market_cap.usd) * 100).toFixed(
+        2
+      );
+      setTokenLiquidity(liquidityCalc);
       setTokenData(tokenDataResponse);
+      setPriceChangePercentage(price_change_percentage_24h);
     } catch (error) {
       console.error("Error fetching token data:", error);
     }
@@ -113,8 +126,28 @@ export default function ProjectTokenOverview({
 
       setTokenPriceData(chartData);
     } catch (error) {
-      console.error("Error fetching token data:", error);
+      console.error("Error fetching token price:", error);
     }
+  };
+
+  const handleChangeDropdown = (option: { title: string; value: number }) => {
+    setFilter({ days: option.value });
+    setSelectedDropdown(option);
+    setIsDropdownOpen(!isDropdownOpen);
+    let newPricePercentage = undefined;
+
+    if (option.value === 1) {
+      newPricePercentage = tokenData?.market_data.price_change_percentage_24h;
+    } else if (option.value === 7) {
+      newPricePercentage = tokenData?.market_data.price_change_percentage_7d;
+    } else if (option.value === 30) {
+      newPricePercentage = tokenData?.market_data.price_change_percentage_30d;
+    } else if (option.value === 60) {
+      newPricePercentage = tokenData?.market_data.price_change_percentage_60d;
+    } else if (365) {
+      newPricePercentage = tokenData?.market_data.price_change_percentage_1y;
+    }
+    setPriceChangePercentage(newPricePercentage);
   };
 
   useEffect(() => {
@@ -124,6 +157,8 @@ export default function ProjectTokenOverview({
   useEffect(() => {
     fetchTokenPrice();
   }, [filter.days]);
+
+  console.log(tokenData);
 
   return tokenData ? (
     <section id="tokenoverview" data-accordion="open" className="mb-6">
@@ -145,24 +180,35 @@ export default function ProjectTokenOverview({
                     ${tokenData.market_data.current_price.usd} USD
                   </h5>
                   <p className="text-base font-normal text-white ">
-                    {tokenData.symbol}
+                    {tokenData.name} - {tokenData.symbol.toLocaleUpperCase()}
                   </p>
                 </div>
-                <div className="flex items-center px-2.5 py-0.5 text-base font-semibold text-green-500 dark:text-green-500 text-center">
-                  {tokenData.market_data.market_cap_change_percentage_24h}
-                  <FaArrowUp className="w-3 h-3 ms-1" />
+
+                <div
+                  className={`flex items-center px-2.5 py-0.5 text-base font-semibold ${
+                    priceChangePercentage && priceChangePercentage < 0
+                      ? "text-red-500"
+                      : "text-green-500"
+                  } text-center`}
+                >
+                  {priceChangePercentage} %
+                  {priceChangePercentage && priceChangePercentage < 0 ? (
+                    <FaArrowDown className="w-3 h-3 ms-1" />
+                  ) : (
+                    <FaArrowUp className="w-3 h-3 ms-1" />
+                  )}
                 </div>
               </div>
 
               {tokenPriceData && <Line data={tokenPriceData} />}
 
-              <div className="grid grid-cols-1 items-center border-gray-200 border-t dark:border-gray-700 justify-between">
+              <div className="flex items-center border-gray-200 border-t dark:border-gray-700 justify-between">
                 <div className="flex flex-col pt-5 relative">
                   <button
                     id="dropdownDefaultButton"
                     data-dropdown-toggle="lastDaysdropdown"
                     data-dropdown-placement="bottom"
-                    className="text-sm font-medium text-gray-200 dark:text-gray-400 hover:text-gray-300 text-center inline-flex items-center"
+                    className="text-sm font-medium text-gray-200 dark:text-gray-400 hover:text-gray-300 text-center inline-flex items-center rounded bg-gray-700 pl-4 shadow-lg hover:bg-gray-800"
                     type="button"
                     onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                   >
@@ -183,11 +229,7 @@ export default function ProjectTokenOverview({
                       {DROPDOWN_OPTIONS.map((option) => (
                         <li key={option.value}>
                           <button
-                            onClick={() => {
-                              setFilter({ days: option.value });
-                              setSelectedDropdown(option);
-                              setIsDropdownOpen(!isDropdownOpen);
-                            }}
+                            onClick={() => handleChangeDropdown(option)}
                             type="button"
                             className="block px-4 py-2 w-full hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                           >
@@ -197,6 +239,16 @@ export default function ProjectTokenOverview({
                       ))}
                     </ul>
                   </div>
+                </div>
+                <div className="pt-5 flex flex-col">
+                  <span className="rounded bg-gray-700 py-1 px-2 mb-2 shadow-lg hover:bg-gray-800">
+                    Market cap value: $
+                    {formatMarketCapValue(tokenData.market_data.market_cap.usd)}{" "}
+                  </span>
+                  <span className="rounded bg-gray-700 py-1 px-2 shadow-lg hover:bg-gray-800">
+                    Liquidity: {tokenLiquidity}%{" "}
+                  </span>
+                  <span></span>
                 </div>
               </div>
             </div>
