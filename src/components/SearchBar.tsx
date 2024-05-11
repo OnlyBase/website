@@ -3,6 +3,8 @@ import { AppContext } from "@/Context/AppContext";
 import { ProjectProps } from "@/interfaces";
 import { FaMagnifyingGlass } from "react-icons/fa6";
 import { ChangeEvent, useContext, useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
+import { projects } from "@/data";
 
 export default function SearchBar({
   isMobile = false,
@@ -13,19 +15,28 @@ export default function SearchBar({
   if (!context) {
     return false;
   }
-  const { projectsData, setProjectsData } = context;
-  const [originalProjectsData] = useState<ProjectProps[]>(projectsData);
+  const { setProjectsData } = context;
+  const [originalProjectsData] = useState<ProjectProps[]>(projects);
+  const router = useRouter();
+  const path = usePathname();
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const searchText = e.target.value.toLowerCase();
     if (searchText !== "") {
-      const newProjects = originalProjectsData.filter((project) =>
-        project.name?.toLowerCase().includes(searchText)
+      const newProjects = originalProjectsData.filter(
+        (project) =>
+          project.name?.toLowerCase().includes(searchText) ||
+          project.tags.find((value) => value.includes(searchText)) ||
+          project.description?.toLowerCase().includes(searchText) ||
+          project.website?.toLowerCase().includes(searchText) ||
+          project.twitter?.toLowerCase().includes(searchText) ||
+          project.smartContractAddress?.toLowerCase().includes(searchText)
       );
       setProjectsData(newProjects);
     } else {
       setProjectsData(originalProjectsData);
     }
+    if (path != "/") router.push("/");
   };
 
   return (

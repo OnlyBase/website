@@ -158,8 +158,6 @@ export default function ProjectTokenOverview({
     fetchTokenPrice();
   }, [filter.days]);
 
-  console.log(tokenData);
-
   return tokenData ? (
     <section id="tokenoverview" data-accordion="open" className="mb-6">
       <h2 id="accordion-arrow-icon-heading-1">

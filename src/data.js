@@ -162,7 +162,7 @@ export const projects = [
     linkedin: null,
     tiktok: null,
     Warpcast: null,
-    smartContractAddress: "0x0000206329b97db379d5e1bf586bbdb969c63274",
+    smartContractAddress: "0x1a7e4e63778b4f12a199c062f3efdd288afcbce8",
     // "smartContractAudits": [
     //     {
     //         "name": "Audit 1",
@@ -199,7 +199,7 @@ export const projects = [
     linkedin: null,
     tiktok: null,
     Warpcast: null,
-    smartContractAddress: "0x41445c7eb21dcb33f2efefcd40b53f814cb9c62b",
+    smartContractAddress: "0x1dd2d631c92b1aCdFCDd51A0F7145A50130050C4",
     // "smartContractAudits": [
     //     {
     //         "name": "Audit 1",
@@ -262,7 +262,7 @@ export const projects = [
     linkedin: null,
     tiktok: null,
     Warpcast: "https://warpcast.com/aerodrome",
-    smartContractAddress: "0x940181a94a35a4569e4529a3cdfb74e38fd98631",
+    smartContractAddress: "0x7Fc66500c84A76Ad7e9c93437bFc5Ac33E2DDaE9",
   },
 
   {
